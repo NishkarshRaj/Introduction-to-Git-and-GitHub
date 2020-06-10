@@ -3,7 +3,7 @@ name: Docker
 on:
   push
 env:
-  IMAGE_NAME: helloworld
+  IMAGE_NAME: compiler
 
 jobs:
   push:
