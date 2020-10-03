@@ -120,6 +120,14 @@
 
 * Periodic Packing of files
 
+#### Github API
+
+* There are two stable versions of the GitHub API: the [REST API](https://docs.github.com/en/free-pro-team@latest/rest) and the [GraphQL API](https://docs.github.com/en/free-pro-team@latest/graphql). You can use the **GitHub REST API** to create calls to get the data you need to integrate with GitHub, and the **GitHub GraphQL API** to create precise and flexible queries for the data you need to integrate with GitHub.
+
+* [REST API Guides](https://docs.github.com/en/free-pro-team@latest/rest/guides) help you getting started with the REST API, authentication, and how to use the REST API for a variety of tasks, whenever [GraphQL API Guides](https://docs.github.com/en/free-pro-team@latest/graphql/guides) will help you getting started with GraphQL, migrating from REST to GraphQL, and how to use the GitHub GraphQL API for another variety of tasks.
+
+* It's also possible for [Developers](https://docs.github.com/en/free-pro-team@latest/developers) to go deeper with GitHub by integrating with Github APIs, customizing their GitHub workflow, and building and sharing apps with the community.
+
 ### GitHub
 
 ![GitHub](img/GitHub.png)
@@ -136,3 +144,4 @@ GitHub is a cloud based repository hosting service for Git VCS.
 
 [Introduction to Markdown](https://github.com/NishkarshRaj/Markdown-for-Documentation)
 
+[Github Docs](https://docs.github.com/en)
