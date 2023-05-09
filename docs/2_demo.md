@@ -172,19 +172,7 @@ $ git push
 
 * merge and rebase
 
-### Learning materials
-
-https://lab.github.com/githubtraining/managing-merge-conflicts
-
-https://lab.github.com/githubtraining/paths/first-day-on-github
-
-https://lab.github.com/githubtraining/paths/first-week-on-github
-
 ## Important Links and References
-
-[Introduction to Unix style Command Line](https://progate.com/languages/commandline)
-
-[Introduction to GitHub](https://progate.com/languages/git)
 
 [GitHub Learning Labs](https://lab.github.com/)
 
