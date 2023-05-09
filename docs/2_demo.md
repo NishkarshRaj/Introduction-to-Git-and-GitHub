@@ -81,6 +81,34 @@ $ git clone [Repository URL]
 $ git log
 ```
 
+### GitHub Best Practices
+
+`1. Use meaningful commit messages:` Make sure your commit messages are clear and concise, and describe the changes you made in the commit.
+
+`2. Keep your repository organized:` Keep your repository organized by using folders to group related files together. Use descriptive names for your files and folders.
+
+`3. Use branches:` Use branches to work on new features or bug fixes without affecting the main codebase. This allows you to experiment with new ideas without worrying about breaking the main code.
+
+`4. Use pull requests:` Use pull requests to review and merge changes into the main codebase. Pull requests allow you to get feedback on your changes before they are merged into the main codebase.
+
+`5. Use issues:` Use issues to track bugs, feature requests, and other tasks. Issues allow you to track progress and communicate with other contributors.
+
+`6. Use comments and discussions:` Use comments and discussions to communicate with other contributors. This can help you get feedback on your changes and collaborate more effectively.
+
+`7. Use GitHub Actions:` GitHub Actions allow you to automate common tasks, such as running tests or deploying your code. This can help you save time and reduce errors.
+
+`8. Follow best practices for security:` Follow best practices for security, such as using strong passwords, enabling two-factor authentication, and reviewing access permissions regularly.
+
+`9. Keep your repository up-to-date:` Keep your repository up-to-date by pulling in changes from other contributors regularly. This can help you avoid conflicts and ensure that your code is compatible with the latest changes.
+
+`10. Document your code:` Document your code to make it easier for others to understand and use. Use clear and concise comments to describe what your code does, how it works, and any limitations or dependencies.
+
+- [ ] [Readme](https://github.com/NishkarshRaj/Markdown-for-Documentation)
+
+- [ ] [License](https://opensource.org/licenses/)
+
+- [ ] [GitIgnore](https://github.com/github/gitignore)
+ 
 ## Contributing to Upstream GitHub Projects
 
 ![Upstream](img/Upstream2.png)
@@ -174,7 +202,7 @@ $ git push
 
 ## Important Links and References
 
-[GitHub Learning Labs](https://lab.github.com/)
+[GitHub Skills Training](https://skills.github.com/)
 
 [GitHub Upstream Contribution commands cheat sheet](https://statusneo.com/github-upstream-contributions-cheetsheet/)
 
