@@ -11,8 +11,10 @@
 * Client
 
 * Working Directory
-
+ 
 * Trunk
+
+![](img/git-components.png)
 
 ### Basic Functionalities of Source Code Management
 
@@ -50,13 +52,21 @@
 
 * Branching and Merging
 
+### CI/CD
+
+In continuous integration practice, a **centralized server** regularly retrieves all new changes to the source code by developers and builds the **software application from scratch.**
+
+The **build and testing of the software is automated and every change or iteration to the software triggers an automated test run to ensure the desired delivery quality.** The central repository is always kept updated in continuous integration practice.
+
+Continuous deployment is the process of building, testing, and releasing the software from the build environment into the production environment automatically without human intervention. Continuous deployment automates the entire testing process and performs more tests on code blocks compared to the usual unit testing done on the code.
+
 ![SDLC with SCM](img/SDLC_SCM.png)
 
-### Version Control Systems
+### Version Control System (VCS)
+
+![](img/chatgpt-vcs.png)
 
 ![VCS](img/VersionControl.png)
-
-![versions](img/versions.jpg)
 
 ### Git
 
@@ -69,16 +79,6 @@
 * Git perceives the information as a series of **snapshots** of files. Git takes a snapshot of how files look like at the moment when a project is committed or saved and it stores a reference to that snapshot of files.
 
 * As an **efficient version control system**, Git does not store snapshot of files again if nothing has changed in the file and it only stores a link to the previous identical snapshot of the file it has already stored.
-
-#### Three states of a file in Git Project
-
-* Modified
-
-* Staged
-
-* Committed
-
-![File States](img/file.png)
 
 #### Coherence and file tracking using Git VCS
 
@@ -100,6 +100,16 @@
 
 ![Git Working directories](img/git.png)
 
+#### Three states of a file in Git Project
+
+* Modified
+
+* Staged
+
+* Committed
+
+![File States](img/file.png)
+
 #### Features of Git
 
 * Non-Linear Development Support
@@ -119,14 +129,6 @@
 * Garbage collection
 
 * Periodic Packing of files
-
-#### Github API
-
-* There are two stable versions of the GitHub API: the [REST API](https://docs.github.com/en/free-pro-team@latest/rest) and the [GraphQL API](https://docs.github.com/en/free-pro-team@latest/graphql). You can use the **GitHub REST API** to create calls to get the data you need to integrate with GitHub, and the **GitHub GraphQL API** to create precise and flexible queries for the data you need to integrate with GitHub.
-
-* [REST API Guides](https://docs.github.com/en/free-pro-team@latest/rest/guides) help you getting started with the REST API, authentication, and how to use the REST API for a variety of tasks, whenever [GraphQL API Guides](https://docs.github.com/en/free-pro-team@latest/graphql/guides) will help you getting started with GraphQL, migrating from REST to GraphQL, and how to use the GitHub GraphQL API for another variety of tasks.
-
-* It's also possible for [Developers](https://docs.github.com/en/free-pro-team@latest/developers) to go deeper with GitHub by integrating with Github APIs, customizing their GitHub workflow, and building and sharing apps with the community.
 
 ### GitHub
 
