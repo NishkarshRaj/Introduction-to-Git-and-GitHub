@@ -16,52 +16,6 @@
 
 ![](img/git-components.png)
 
-### Basic Functionalities of Source Code Management
-
-* Add
-
-* Check Out
-
-* Check In
-
-* Check In message
-
-* Revision
-
-* Head
-
-* Changelog
-
-* Revert
-
-### Features of SCM
-
-* Backup and Restore
-
-* Synchronize
-
-* Earlier version review
-
-* Recent version restore
-
-* Version History
-
-* Owner History
-
-* Testing Environment
-
-* Branching and Merging
-
-### CI/CD
-
-In continuous integration practice, a **centralized server** regularly retrieves all new changes to the source code by developers and builds the **software application from scratch.**
-
-The **build and testing of the software is automated and every change or iteration to the software triggers an automated test run to ensure the desired delivery quality.** The central repository is always kept updated in continuous integration practice.
-
-Continuous deployment is the process of building, testing, and releasing the software from the build environment into the production environment automatically without human intervention. Continuous deployment automates the entire testing process and performs more tests on code blocks compared to the usual unit testing done on the code.
-
-![SDLC with SCM](img/SDLC_SCM.png)
-
 ### Version Control System (VCS)
 
 ![](img/chatgpt-vcs.png)
@@ -129,6 +83,54 @@ Continuous deployment is the process of building, testing, and releasing the sof
 * Garbage collection
 
 * Periodic Packing of files
+
+### Basic Functionalities of Source Code Management
+
+* Add
+
+* Check Out
+
+* Check In
+
+* Check In message
+
+* Revision
+
+* Head
+
+* Changelog
+
+* Revert
+
+### Features of SCM
+
+* Backup and Restore
+
+* Synchronize
+
+* Earlier version review
+
+* Recent version restore
+
+* Version History
+
+* Owner History
+
+* Testing Environment
+
+* Branching and Merging
+
+### CI/CD
+
+![](https://www.suse.com/assets/img/devops-process.png)
+
+In continuous integration practice, a **centralized server** regularly retrieves all new changes to the source code by developers and builds the **software application from scratch.**
+
+The **build and testing of the software is automated and every change or iteration to the software triggers an automated test run to ensure the desired delivery quality.** The central repository is always kept updated in continuous integration practice.
+
+Continuous deployment is the process of building, testing, and releasing the software from the build environment into the production environment automatically without human intervention. Continuous deployment automates the entire testing process and performs more tests on code blocks compared to the usual unit testing done on the code.
+
+![SDLC with SCM](img/SDLC_SCM.png)
 
 ### GitHub
 
