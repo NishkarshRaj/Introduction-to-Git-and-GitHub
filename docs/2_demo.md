@@ -108,7 +108,18 @@ $ git log
 - [ ] [License](https://opensource.org/licenses/)
 
 - [ ] [GitIgnore](https://github.com/github/gitignore)
- 
+
+- [ ] [Dependabot](https://docs.github.com/github/administering-a-repository/configuration-options-for-dependency-updates)
+
+```yaml
+version: 2
+updates:
+  - package-ecosystem: "npm" # See documentation for possible values
+    directory: "/" # Location of package manifests
+    schedule:
+      interval: "weekly"
+```
+  
 ## Contributing to Upstream GitHub Projects
 
 ![Upstream](img/Upstream2.png)

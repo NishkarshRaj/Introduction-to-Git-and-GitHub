@@ -2,42 +2,65 @@
 
 ### Pushing Docker Images on GitHub Packages
 
-* Authorize your local machine with the GitHub Package registry
+* `Dockerfile`
 
-```
-$ echo "GitHub Token" | docker login docker.pkg.github.com --username [GitHub Username] --password-stdin
-```
-
-* Tag the local image with the GitHub Repository name
-
-```
-$ docker tag [local image name] docker.pkg.github.com/[GitHub username]/[Repository name]/[Image name]:[Version]
-```
-
-* Push the local image to remote GitHub registry
-
-```
-$ docker push docker.pkg.github.com/[GitHub username]/[Repository name]/[Image name]:[Version]
+```dockerfile
+FROM    node:14-alpine 
+WORKDIR /usr/src/app
+COPY    . .
+RUN     npm install
+EXPOSE  3000
+CMD     [ "npm", "start" ]
 ```
 
-### Using the Docker Images locally
-
-* Pull the remote docker image locally
+- `.dockerignore`
 
 ```
-$ docker pull docker.pkg.github.com/[Username]/[Repository Name]/[Image name]:[version]
+node_modules/
 ```
 
-* Check the Docker Image ID 
+- `Docker Build And Push Actions`
 
-```
-$ docker images
-```
+```yaml
+name: Create and publish a Docker image
 
-* Launch a docker container using the pulled docker image
+on: push
 
-```
-$ docker run -it [Image ID]
+env:
+  REGISTRY: ghcr.io
+  IMAGE_NAME: ${{ github.repository }}
+
+jobs:
+  build-and-push-image:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Log in to the Container registry
+        uses: docker/login-action@65b78e6e13532edd9afa3aa52ac7964289d1a9c1
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Extract metadata (tags, labels) for Docker
+        id: meta
+        uses: docker/metadata-action@9ec57ed1fcdbf14dcef7dfbe97b2010124a938b7
+        with:
+          images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
+
+      - name: Build and push Docker image
+        uses: docker/build-push-action@f2a1d5e99d037542a71f64918e516c093c6f3fc4
+        with:
+          context: .
+          push: true
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
 ```
 
 ## Important Links and References
