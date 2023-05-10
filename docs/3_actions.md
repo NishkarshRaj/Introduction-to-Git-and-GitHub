@@ -16,82 +16,23 @@ The build and testing of the software is automated and every change or iteration
 
 ![Actions](img/actions.png)
 
-### A template GitHub Action
+### A template GitHub Action - Create React App
 
-* Declarative Actions YML script
-
-```yml
-name: Docker
-
-on:
-  push
-env:
-  IMAGE_NAME: helloworld
-
-jobs:
-  push:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-
-      - name: Build image
-        run: docker build . --file Dockerfile --tag $IMAGE_NAME
-
-      - name: Log into registry
-        run: echo "${{ secrets.GH_TOKEN }}" | docker login docker.pkg.github.com -u ${{ github.actor }} --password-stdin
-
-      - name: Push image
-        run: |
-          IMAGE_ID=docker.pkg.github.com/${{ github.repository }}/$IMAGE_NAME
-          
-          # Change all uppercase to lowercase
-          IMAGE_ID=$(echo $IMAGE_ID | tr '[A-Z]' '[a-z]')
-
-          # Strip git ref prefix from version
-          VERSION=$(echo "${{ github.ref }}" | sed -e 's,.*/\(.*\),\1,')
-
-          # Strip "v" prefix from tag name
-          [[ "${{ github.ref }}" == "refs/tags/"* ]] && VERSION=$(echo $VERSION | sed -e 's/^v//')
-
-          # Use Docker `latest` tag convention
-          [ "$VERSION" == "master" ] && VERSION=latest
-
-          echo IMAGE_ID=$IMAGE_ID
-          echo VERSION=$VERSION
-
-          docker tag $IMAGE_NAME $IMAGE_ID:$VERSION
-          docker push $IMAGE_ID:$VERSION
-```
-
-* Dockerfile
+* `Dockerfile`
 
 ```dockerfile
-# Base Image
-FROM ubuntu
+FROM    node:14-alpine 
+WORKDIR /usr/src/app
+COPY    . .
+RUN     npm install
+EXPOSE  3000
+CMD     [ "npm", "start" ]
+```
 
-# Commands to be executed on Image Creation
-RUN apt-get -y upgrade && apt-get -y update
+- `.dockerignore`
 
-# Install Python
-RUN apt install -y python3
-RUN python3 --version
-
-# Install Java
-RUN apt install -y openjdk-11-jre-headless
-RUN java --version
-
-# Install C++ Compiler
-RUN apt install -y g++
-RUN g++ --version
-
-# Install Docker
-RUN apt install -y docker.io
-RUN docker --version
-
-# Move GitHub source files to Docker Image
-RUN mkdir /src
-ADD src/ /src
-WORKDIR /src
+```
+node_modules/
 ```
 
 ## Important Links and References
@@ -103,8 +44,6 @@ WORKDIR /src
 [Learn Docker](https://iq.opengenus.org/basics-of-using-docker/)
 
 [GitHub Actions Blog](https://iq.opengenus.org/github-actions-using-container-scripts/)
-
-[Learn GitHub Actions](https://lab.github.com/githubtraining/github-actions:-hello-world)
 
 [Actions Checkout Repository](https://github.com/actions/checkout)
 
